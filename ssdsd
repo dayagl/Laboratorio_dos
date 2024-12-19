@@ -1,0 +1,54 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 5dfe601..054269e 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -20,30 +20,17 @@[m
+             var estadoTarea = document.getElementById("estadoTarea").value;[m
+ [m
+             localStorage.setItem(nombreTarea, nombreTarea);[m
+[31m-            localStorage.setItem("descripción "+nombreTarea, descripcionTarea);[m
+[31m-            localStorage.setItem("estado "+nombreTarea, estadoTarea);[m
+[31m-        }[m
+[31m-[m
+[31m-[m
+[31m-        function actulizardatos() {[m
+[31m-            const tar = document.getElementById("Tarea").value ;[m
+[31m-            const des = document.getElementById("Descripcion").value ;[m
+[31m-            const est = document.getElementById("Estado").value ;[m
+[31m-            localStorage.setItem(tar, tar);[m
+[31m-            localStorage.setItem("d"+tar, des);[m
+[31m-            localStorage.setItem("e"+tar, est);[m
+[31m-        }[m
+[31m-[m
+[31m-        function consultardatos() {[m
+[31m-            const tar = document.getElementById("Tarea").value ;[m
+[31m-            const des = document.getElementById("Descripcion").value ;[m
+[31m-            const est = document.getElementById("Estado").value ;[m
+[31m-            localStorage.setItem(tar, tar);[m
+[31m-            localStorage.setItem("d"+tar, des);[m
+[31m-            localStorage.setItem("e"+tar, est);[m
+[32m+[m[32m            localStorage.setItem("d"+nombreTarea, descripcionTarea);[m
+[32m+[m[32m            localStorage.setItem("e"+nombreTarea, estadoTarea);[m
+         }[m
+ [m
+[32m+[m[32m        function consultarTarea() {[m
+[32m+[m[32m            const nombreTarea = document.getElementById("nombreTarea").value ;[m[41m    [m
+[32m+[m[32m            document.getElementById("descripcionTarea").value = localStorage.getItem("d"+nombreTarea);[m
+[32m+[m[32m            document.getElementById("estadoTarea").value = localStorage.getItem("e"+nombreTarea);[m
+ [m
+[32m+[m[32m        }[m[41m                                                                   [m
+[32m+[m[41m       [m
+ [m
+     </script>[m
+ </head>[m
+[36m@@ -59,8 +46,8 @@[m
+     <input type="text" name="estadoTarea" id="estadoTarea" placeholder="Ingresar el Estado de la Tarea" style="width:200px;"> <br><br>[m
+ [m
+     <input type="submit" value="Enviar">[m
+[31m-    <input type="button" onclick="actulizardatos();" value="Actualizar">[m
+[31m-    <input type="button" onclick="consultardatos();" value="consultar">        [m
+[32m+[m[41m   [m
+[32m+[m[32m    <input type="button" onclick="consultarTarea();" value="consultar">[m[41m        [m
+     <input type="reset"value="Limpiar Datos">[m
+ [m
+ </form>[m

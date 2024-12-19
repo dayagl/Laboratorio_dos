@@ -29,7 +29,20 @@
             document.getElementById("descripcionTarea").value = localStorage.getItem("d"+nombreTarea);
             document.getElementById("estadoTarea").value = localStorage.getItem("e"+nombreTarea);
 
-        }                                                                   
+        }    
+        
+        function ActualizarTarea() {
+           
+            var cnombreTarea = document.getElementById("nombreTarea").value;
+            var cdescripcionTarea = document.getElementById("descripcionTarea").value;
+            var cestadoTarea = document.getElementById("estadoTarea").value;
+
+            localStorage.setItem(cnombreTarea, cnombreTarea);
+            localStorage.setItem("d"+cnombreTarea, cdescripcionTarea);
+            localStorage.setItem("e"+cnombreTarea, cestadoTarea);
+
+        }    
+        
        
 
     </script>
@@ -47,7 +60,8 @@
 
     <input type="submit" value="Enviar">
    
-    <input type="button" onclick="consultarTarea();" value="consultar">        
+    <input type="button" onclick="consultarTarea();" value="consultar">     
+    <input type="button" onclick="ActualizarTarea();" value="actualizar Tarea">    
     <input type="reset"value="Limpiar Datos">
 
 </form>
