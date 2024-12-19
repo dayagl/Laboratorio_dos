@@ -41,7 +41,15 @@
             localStorage.setItem("d"+cnombreTarea, cdescripcionTarea);
             localStorage.setItem("e"+cnombreTarea, cestadoTarea);
 
-        }    
+        }   
+        
+        function EliminarTarea() {
+            var cnombreTarea = document.getElementById("nombreTarea").value;
+            localStorage.removeItem(cnombreTarea);
+            localStorage.removeItem("d"+cnombreTarea);
+            localStorage.removeItem("e"+cnombreTarea);
+        }
+
         
        
 
@@ -61,7 +69,8 @@
     <input type="submit" value="Enviar">
    
     <input type="button" onclick="consultarTarea();" value="consultar">     
-    <input type="button" onclick="ActualizarTarea();" value="actualizar Tarea">    
+    <input type="button" onclick="ActualizarTarea();" value="actualizar Tarea">  
+    <input type="button" onclick="EliminarTarea();" value="Eliminar Tarea">  
     <input type="reset"value="Limpiar Datos">
 
 </form>
